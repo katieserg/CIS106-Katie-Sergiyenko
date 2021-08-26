@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-25 07:06:04 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1HRjBPUzk7MjAyMS0wOC0yNTswNjo1OToxOSBQTTszMzU0"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1HRjBPUzk7MjAyMS0wOC0yNTswNzowNjowNCBQTTsxOzM0NDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="gallons" type="Integer" array="False" size=""/>
+            <declare name="miles" type="Integer" array="False" size=""/>
+            <declare name="mpg" type="Integer" array="False" size=""/>
+            <assign variable="gallons" expression="20"/>
+            <assign variable="miles" expression="400"/>
+            <assign variable="mpg" expression="miles/gallons"/>
+            <output expression="&quot;The mileage for this trip is &quot; &amp; mpg &amp; &quot; miles per gallon.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

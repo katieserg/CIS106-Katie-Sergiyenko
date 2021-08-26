@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-25 06:34:01 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1HRjBPUzk7MjAyMS0wOC0yNTswNjowNjo1MiBQTTszMzQz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1HRjBPUzk7MjAyMS0wOC0yNTswNjozNDowMSBQTTs0OzM0NDk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="num1" type="Integer" array="False" size=""/>
+            <declare name="num2" type="Integer" array="False" size=""/>
+            <declare name="sum" type="Integer" array="False" size=""/>
+            <declare name="product" type="Integer" array="False" size=""/>
+            <declare name="difference" type="Integer" array="False" size=""/>
+            <input variable="num1"/>
+            <input variable="num2"/>
+            <assign variable="sum" expression="num1+num2"/>
+            <assign variable="product" expression="num1*num2"/>
+            <assign variable="difference" expression="num2-num1"/>
+            <output expression="&quot;The sum, product, and difference of &quot; &amp; num1 &amp; &quot; and &quot; &amp; num2 &amp; &quot;, respectively, are &quot; &amp; sum &amp; &quot;, &quot; &amp; product &amp; &quot;, and &quot; &amp; difference &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

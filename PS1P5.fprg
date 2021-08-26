@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-25 07:18:13 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1HRjBPUzk7MjAyMS0wOC0yNTswNzoxMDoyNSBQTTszMzM5"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1HRjBPUzk7MjAyMS0wOC0yNTswNzoxODoxMyBQTTsxOzM0NTI="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="itemcost" type="Integer" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="taxamount" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <assign variable="itemcost" expression="15"/>
+            <assign variable="tax" expression="0.07"/>
+            <assign variable="taxamount" expression="itemcost*tax"/>
+            <assign variable="total" expression="itemcost+taxamount"/>
+            <output expression="&quot;The amount for the item is &quot; &amp; itemcost &amp; &quot; dollars, the tax is &quot; &amp; taxamount &amp; &quot; dollars, and the total is &quot; &amp; total &amp; &quot; dollars.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

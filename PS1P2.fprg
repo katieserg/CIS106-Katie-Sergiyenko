@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-08-25 06:58:26 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1HRjBPUzk7MjAyMS0wOC0yNTswNjo0ODo1MyBQTTszMzUw"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLU1HRjBPUzk7MjAyMS0wOC0yNTswNjo1ODoyNiBQTTsxOzM0NTk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="score1" type="Integer" array="False" size=""/>
+            <declare name="score2" type="Integer" array="False" size=""/>
+            <declare name="average" type="Integer" array="False" size=""/>
+            <assign variable="name" expression="&quot;Smith&quot;"/>
+            <assign variable="score1" expression="95"/>
+            <assign variable="score2" expression="87"/>
+            <assign variable="average" expression="(score1+score2)/2"/>
+            <output expression="&quot;The average exam score for &quot; &amp; name &amp; &quot; is &quot; &amp; average &amp; &quot;.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
