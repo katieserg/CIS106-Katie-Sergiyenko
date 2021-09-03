@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-03 04:19:52 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVRRMVZFTlM7MjAyMS0wOS0wMzswNDoxMjozMiBQTTszMzc4"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVRRMVZFTlM7MjAyMS0wOS0wMzswNDoxOTo1MiBQTTsxOzM0OTU="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="credits" type="Integer" array="False" size=""/>
+            <declare name="tuition" type="Real" array="False" size=""/>
+            <declare name="labFee" type="Real" array="False" size=""/>
+            <declare name="totalTuition" type="Real" array="False" size=""/>
+            <assign variable="tuition" expression="250"/>
+            <assign variable="labFee" expression="100"/>
+            <input variable="name"/>
+            <input variable="credits"/>
+            <assign variable="totalTuition" expression="(credits*tuition)+labFee"/>
+            <output expression="&quot;The total tuition fee for &quot; &amp; name &amp; &quot; is &quot; &amp; totalTuition &amp; &quot; dollars.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
