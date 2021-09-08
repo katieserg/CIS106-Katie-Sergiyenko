@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-07 06:23:57 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVJFUTc5SU87MjAyMS0wOS0wNzswNTowNjozMyBQTTszMzUz"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVJFUTc5SU87MjAyMS0wOS0wNzswNjoyMzo1NyBQTTsxOzM0Njc="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="quantity" type="Real" array="False" size=""/>
+            <declare name="unitPrice" type="Real" array="False" size=""/>
+            <declare name="extendedPrice" type="Real" array="False" size=""/>
+            <declare name="taxPercent" type="Real" array="False" size=""/>
+            <declare name="tax" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter quantity of item: &quot;" newline="True"/>
+            <input variable="quantity"/>
+            <if expression="quantity &gt;= 1000">
+                <then>
+                    <assign variable="unitPrice" expression="3"/>
+                </then>
+                <else>
+                    <assign variable="unitPrice" expression="5"/>
+                </else>
+            </if>
+            <assign variable="extendedPrice" expression="quantity*unitPrice"/>
+            <assign variable="taxPercent" expression="0.07"/>
+            <assign variable="tax" expression="extendedPrice*taxPercent"/>
+            <assign variable="total" expression="extendedPrice+tax"/>
+            <output expression="&quot;The quantity of the item is &quot; &amp; quantity &amp; &quot;, the unit price is &quot; &amp; unitPrice &amp; &quot; dollars, the extended price is &quot; &amp; extendedPrice &amp; &quot; dollars, the tax is &quot; &amp; tax &amp; &quot; dollars, and the total is &quot; &amp; total &amp; &quot; dollars.&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

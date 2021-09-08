@@ -1,0 +1,37 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-07 07:03:06 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVJFUTc5SU87MjAyMS0wOS0wNzswNjo1MjowNyBQTTszMzU2"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVJFUTc5SU87MjAyMS0wOS0wNzswNzowMzowNiBQTTsxOzM0NjA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="applianceCost" type="Real" array="False" size=""/>
+            <declare name="warranty" type="Real" array="False" size=""/>
+            <declare name="total" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter name of appliance:&quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;What is the cost of the appliance?&quot;" newline="True"/>
+            <input variable="applianceCost"/>
+            <if expression="applianceCost &gt; 1000">
+                <then>
+                    <assign variable="warranty" expression="0.10*applianceCost"/>
+                </then>
+                <else>
+                    <assign variable="warranty" expression="0.05*applianceCost"/>
+                </else>
+            </if>
+            <assign variable="total" expression="applianceCost+warranty"/>
+            <output expression="&quot;Name of appliance: &quot; &amp; name" newline="True"/>
+            <output expression="&quot;Cost of appliance: &quot; &amp; applianceCost &amp; &quot; dollars&quot;" newline="True"/>
+            <output expression="&quot;Cost of warranty: &quot; &amp; warranty &amp; &quot; dollars&quot;" newline="True"/>
+            <output expression="&quot;Total cost: &quot; &amp; total &amp; &quot; dollars&quot;" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
