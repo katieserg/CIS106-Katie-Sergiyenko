@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-09-25 06:25:11 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUlIUkxSMEs7MjAyMS0wOS0yNTswNTo0ODo0NSBQTTszMzc0"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUlIUkxSMEs7MjAyMS0wOS0yNTswNjoyNToxMSBQTTsxOzM0NzE="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="response" type="String" array="False" size=""/>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="payrate" type="Real" array="False" size=""/>
+            <declare name="grosspay" type="Real" array="False" size=""/>
+            <declare name="counter" type="Integer" array="False" size=""/>
+            <assign variable="counter" expression="0"/>
+            <declare name="grosspaysum" type="Real" array="False" size=""/>
+            <assign variable="grosspaysum" expression="0"/>
+            <declare name="averagepay" type="Real" array="False" size=""/>
+            <declare name="totalgross" type="Real" array="False" size=""/>
+            <declare name="overtimehours" type="Real" array="False" size=""/>
+            <declare name="overtimepay" type="Real" array="False" size=""/>
+            <declare name="overtimegrosspay" type="Real" array="False" size=""/>
+            <output expression="&quot;Would you like to compute your gross pay? (Yes or No)&quot;" newline="True"/>
+            <input variable="response"/>
+            <while expression="response == &quot;Yes&quot;">
+                <assign variable="counter" expression="counter + 1"/>
+                <output expression="&quot;Enter employee last name: &quot;" newline="True"/>
+                <input variable="name"/>
+                <output expression="&quot;Enter hours worked: &quot;" newline="True"/>
+                <input variable="hours"/>
+                <output expression="&quot;Enter rate of pay: &quot;" newline="True"/>
+                <input variable="payrate"/>
+                <assign variable="grosspay" expression="hours*payrate"/>
+                <if expression="hours &gt; 40">
+                    <then>
+                        <assign variable="overtimehours" expression="hours-40"/>
+                        <assign variable="overtimepay" expression="payrate*1.5"/>
+                        <assign variable="overtimegrosspay" expression="overtimehours*overtimepay"/>
+                        <assign variable="totalgross" expression="grosspay + overtimegrosspay"/>
+                    </then>
+                    <else>
+                        <assign variable="totalgross" expression="grosspay"/>
+                    </else>
+                </if>
+                <output expression="&quot;The gross pay for &quot; &amp; name &amp; &quot; is $&quot; &amp; totalgross" newline="True"/>
+                <assign variable="grosspaysum" expression="grosspaysum + totalgross"/>
+                <output expression="&quot;Would you like to compute your gross pay? (Yes or No)&quot;" newline="True"/>
+                <input variable="response"/>
+            </while>
+            <output expression="&quot;Sum of all gross pays: $&quot; &amp; grosspaysum" newline="True"/>
+            <output expression="&quot;Number of employees entered: &quot; &amp; counter" newline="True"/>
+            <assign variable="averagepay" expression="grosspaysum/counter"/>
+            <output expression="&quot;Average pay: $&quot; &amp; averagepay" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>
