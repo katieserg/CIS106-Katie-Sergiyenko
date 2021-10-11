@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-05 06:05:20 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLTVLOENRNVI7MjAyMS0xMC0wNTswNTo0NjowNyBQTTszMzE5"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLTVLOENRNVI7MjAyMS0xMC0wNTswNjowNToyMCBQTTsxOzM0MTg="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="salary" type="Real" array="False" size=""/>
+            <declare name="BonusRate" type="Real" array="False" size=""/>
+            <declare name="bonus" type="Real" array="False" size=""/>
+            <declare name="sum" type="Real" array="False" size=""/>
+            <declare name="count" type="Integer" array="False" size=""/>
+            <assign variable="sum" expression="0"/>
+            <for variable="count" start="1" end="5" direction="inc" step="1">
+                <output expression="&quot;Enter last name: &quot;" newline="True"/>
+                <input variable="name"/>
+                <output expression="&quot;Enter salary: $&quot;" newline="True"/>
+                <input variable="salary"/>
+                <if expression="salary &gt;= 100000">
+                    <then>
+                        <assign variable="BonusRate" expression="0.2"/>
+                    </then>
+                    <else>
+                        <if expression="salary == 50000">
+                            <then>
+                                <assign variable="BonusRate" expression="0.15"/>
+                            </then>
+                            <else>
+                                <assign variable="BonusRate" expression="0.1"/>
+                            </else>
+                        </if>
+                    </else>
+                </if>
+                <assign variable="bonus" expression="salary*BonusRate"/>
+                <assign variable="sum" expression="sum+bonus"/>
+                <output expression="name &amp; &quot;- Salary: $&quot; &amp; salary &amp; &quot; Bonus: $&quot; &amp; bonus" newline="True"/>
+            </for>
+            <output expression="&quot;Sum of all bonuses: $&quot; &amp; sum" newline="True"/>
+        </body>
+    </function>
+</flowgorithm>

@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-03 07:04:50 PM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLVA1TDgwUzQ7MjAyMS0xMC0wMzswNTo1MDoxNSBQTTszMjky"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLVA1TDgwUzQ7MjAyMS0xMC0wMzswNzowNDo1MCBQTTsxOzM0MDA="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="year" type="Integer" array="False" size=""/>
+            <declare name="principle" type="Real" array="False" size=""/>
+            <declare name="rate" type="Real" array="False" size=""/>
+            <declare name="interest" type="Real" array="False" size=""/>
+            <declare name="ebalance" type="Real" array="False" size=""/>
+            <declare name="TotalInterest" type="Real" array="False" size=""/>
+            <declare name="yn" type="String" array="False" size=""/>
+            <output expression="&quot;Would you like to compute your beginning balance, ending balance, and accumulated interest earned? (Yes or No)&quot;" newline="False"/>
+            <input variable="yn"/>
+            <while expression="yn = &quot;Yes&quot;">
+                <output expression="&quot;Enter principle amount: &quot;" newline="True"/>
+                <input variable="principle"/>
+                <output expression="&quot;Enter interest rate: &quot;" newline="True"/>
+                <input variable="rate"/>
+                <output expression="&quot;Year   &quot; &amp; &quot;Beginning Balance   &quot; &amp; &quot;Ending Balance&quot;" newline="True"/>
+                <assign variable="TotalInterest" expression="0"/>
+                <for variable="year" start="1" end="5" direction="inc" step="1">
+                    <assign variable="interest" expression="principle*rate"/>
+                    <assign variable="TotalInterest" expression="TotalInterest + interest"/>
+                    <assign variable="ebalance" expression="principle+interest"/>
+                    <output expression="year &amp; &quot;   $&quot; &amp; principle &amp; &quot;    $&quot; &amp; ebalance" newline="True"/>
+                    <assign variable="principle" expression="ebalance"/>
+                </for>
+                <output expression="&quot;Total interest earned: $&quot; &amp; TotalInterest" newline="True"/>
+                <output expression="&quot;Would you like to do this again? (Yes or No)&quot;" newline="True"/>
+                <input variable="yn"/>
+            </while>
+        </body>
+    </function>
+</flowgorithm>
