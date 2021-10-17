@@ -1,0 +1,87 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-17 01:39:35 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUlWTDlTNDc7MjAyMS0xMC0xNzswMToxNDozNSBBTTszMzE0"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUlWTDlTNDc7MjAyMS0xMC0xNzswMTozOTozNSBBTTsxOzM0Mjk="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="code" type="String" array="False" size=""/>
+            <declare name="hours" type="Real" array="False" size=""/>
+            <declare name="payrate" type="Real" array="False" size=""/>
+            <declare name="grosspay" type="Real" array="False" size=""/>
+            <declare name="overtime" type="Real" array="False" size=""/>
+            <declare name="overtimehours" type="Real" array="False" size=""/>
+            <declare name="overtimepay" type="Real" array="False" size=""/>
+            <declare name="overtimegrosspay" type="Real" array="False" size=""/>
+            <declare name="totalgross" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter last name: &quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Enter job code (L, A, J): &quot;" newline="True"/>
+            <input variable="code"/>
+            <output expression="&quot;Enter hours worked: &quot;" newline="True"/>
+            <input variable="hours"/>
+            <call expression="CompPayrate(code)"/>
+            <assign variable="payrate" expression="CompPayrate(code)"/>
+            <call expression="CompGrosspay(hours, payrate)"/>
+            <assign variable="grosspay" expression="CompGrosspay(hours, payrate)"/>
+            <if expression="hours &gt; 40">
+                <then>
+                    <assign variable="overtimehours" expression="hours - 40"/>
+                    <assign variable="overtimepay" expression="payrate*1.5"/>
+                    <assign variable="overtimegrosspay" expression="overtimehours + overtimepay"/>
+                    <assign variable="totalgross" expression="grosspay + overtimegrosspay"/>
+                </then>
+                <else>
+                    <assign variable="totalgross" expression="grosspay"/>
+                </else>
+            </if>
+            <output expression="name" newline="True"/>
+            <output expression="&quot;Gross pay: $&quot; &amp; totalgross" newline="True"/>
+        </body>
+    </function>
+    <function name="CompGrosspay" type="Real" variable="grosspay">
+        <parameters>
+            <parameter name="hours" type="Real" array="False"/>
+            <parameter name="payrate" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="grosspay" type="Real" array="False" size=""/>
+            <assign variable="grosspay" expression="payrate*hours"/>
+        </body>
+    </function>
+    <function name="CompPayrate" type="Real" variable="payrate">
+        <parameters>
+            <parameter name="code" type="String" array="False"/>
+        </parameters>
+        <body>
+            <declare name="payrate" type="Real" array="False" size=""/>
+            <if expression="code == &quot;L&quot;">
+                <then>
+                    <assign variable="payrate" expression="25"/>
+                </then>
+                <else>
+                    <if expression="code == &quot;A&quot;">
+                        <then>
+                            <assign variable="payrate" expression="30"/>
+                        </then>
+                        <else>
+                            <if expression="code == &quot;J&quot;">
+                                <then>
+                                    <assign variable="payrate" expression="50"/>
+                                </then>
+                                <else/>
+                            </if>
+                        </else>
+                    </if>
+                </else>
+            </if>
+        </body>
+    </function>
+</flowgorithm>

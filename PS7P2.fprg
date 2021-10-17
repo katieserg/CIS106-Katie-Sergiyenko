@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="PhotonUser"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-17 12:56:40 AM"/>
+        <attribute name="created" value="UGhvdG9uVXNlcjtFQzJBTUFaLUlWTDlTNDc7MjAyMS0xMC0xNzsxMjo0ODo0NSBBTTszMzI0"/>
+        <attribute name="edited" value="UGhvdG9uVXNlcjtFQzJBTUFaLUlWTDlTNDc7MjAyMS0xMC0xNzsxMjo1Njo0MCBBTTsxOzM0MjY="/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <declare name="name" type="String" array="False" size=""/>
+            <declare name="hits" type="Real" array="False" size=""/>
+            <declare name="AtBats" type="Real" array="False" size=""/>
+            <declare name="BattingAvg" type="Real" array="False" size=""/>
+            <output expression="&quot;Enter player last name: &quot;" newline="True"/>
+            <input variable="name"/>
+            <output expression="&quot;Enter number of hits: &quot;" newline="True"/>
+            <input variable="hits"/>
+            <output expression="&quot;Enter number of at-bats: &quot;" newline="True"/>
+            <input variable="AtBats"/>
+            <call expression="CompBattingAvg(hits, AtBats)"/>
+            <assign variable="BattingAvg" expression="CompBattingAvg(hits, AtBats)"/>
+            <output expression="name" newline="True"/>
+            <output expression="&quot;Batting average: &quot; &amp; BattingAvg" newline="True"/>
+        </body>
+    </function>
+    <function name="CompBattingAvg" type="Real" variable="BattingAvg">
+        <parameters>
+            <parameter name="hits" type="Real" array="False"/>
+            <parameter name="AtBats" type="Real" array="False"/>
+        </parameters>
+        <body>
+            <declare name="BattingAvg" type="Real" array="False" size=""/>
+            <assign variable="BattingAvg" expression="hits/AtBats"/>
+        </body>
+    </function>
+</flowgorithm>
